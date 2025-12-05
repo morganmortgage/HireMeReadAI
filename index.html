@@ -2,14 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Lance Morgan – Mortgage & Real Estate + AI Copilots</title>
+  <title>Lance Morgan – Mortgage, Real Estate & AI Copilots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Font: Inter for better readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --bg-page: #f5f7fb;
+      --bg-page: #f6f7fb;
       --bg-card: #ffffff;
       --text-main: #111827;
-      --text-muted: #4b5563;
+      --text-muted: #374151;
       --accent: #4f46e5;
       --accent-soft: #eef2ff;
       --border-soft: #e5e7eb;
@@ -17,8 +23,8 @@
       --radius-lg: 18px;
       --radius-xl: 24px;
       --radius-pill: 999px;
-      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
+      --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "SF Pro Text", "Segoe UI", sans-serif;
     }
 
     * {
@@ -31,7 +37,8 @@
       font-family: var(--font-sans);
       background: var(--bg-page);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 15px;
     }
 
     a {
@@ -46,7 +53,7 @@
     .page {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 32px 16px 64px;
+      padding: 28px 16px 64px;
     }
 
     /* Top bar */
@@ -55,24 +62,24 @@
       background: var(--bg-card);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-soft);
-      padding: 14px 18px;
+      padding: 12px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 28px;
-      gap: 16px;
+      margin-bottom: 24px;
+      gap: 12px;
     }
 
     .top-bar-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       min-width: 0;
     }
 
     .avatar-pill {
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 999px;
       background: linear-gradient(135deg, #4f46e5, #06b6d4);
       display: flex;
@@ -80,7 +87,7 @@
       justify-content: center;
       color: #ffffff;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 15px;
       flex-shrink: 0;
     }
 
@@ -91,26 +98,22 @@
     }
 
     .top-bar-name {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      white-space: normal;
     }
 
     .top-bar-subtitle {
       font-size: 13px;
-      color: var(--text-muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      color: #6b7280;
+      white-space: normal; /* allow wrapping on mobile */
     }
 
     .btn-linkedin-top {
       border-radius: var(--radius-pill);
       border: 1px solid #e5e7eb;
-      padding: 8px 16px;
-      font-size: 13px;
+      padding: 8px 14px;
+      font-size: 12px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -133,7 +136,7 @@
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 1.9fr) minmax(260px, 1.1fr);
-      gap: 28px;
+      gap: 24px;
       align-items: flex-start;
     }
 
@@ -145,8 +148,8 @@
       background: var(--bg-card);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-soft);
-      padding: 26px 26px 28px;
-      margin-bottom: 22px;
+      padding: 22px 22px 24px;
+      margin-bottom: 20px;
     }
 
     .hero-eyebrow {
@@ -159,22 +162,26 @@
       color: var(--accent);
       background: var(--accent-soft);
       border-radius: var(--radius-pill);
-      padding: 6px 12px;
-      margin-bottom: 18px;
+      padding: 5px 11px;
+      margin-bottom: 14px;
     }
 
     .hero-title {
-      font-size: 28px;
-      line-height: 1.2;
-      margin: 0 0 10px;
+      font-size: 26px;
+      line-height: 1.25;
+      margin: 0 0 8px;
       font-weight: 700;
     }
 
     .hero-subtitle {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-muted);
-      margin: 0 0 18px;
-      max-width: 680px;
+      margin: 0 0 14px;
+      max-width: 700px;
+    }
+
+    .hero-subtitle + .hero-subtitle {
+      margin-top: 4px;
     }
 
     .pill-row {
@@ -196,22 +203,22 @@
     }
 
     .section-title {
-      margin: 0 0 10px;
+      margin: 0 0 8px;
       font-size: 17px;
       font-weight: 600;
     }
 
     .section-lead {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     ul {
       padding-left: 20px;
       margin: 0 0 6px;
       color: var(--text-muted);
-      font-size: 14px;
+      font-size: 15px;
     }
 
     li + li {
@@ -219,7 +226,7 @@
     }
 
     .content-card h4 {
-      margin: 16px 0 6px;
+      margin: 14px 0 6px;
       font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.08em;
@@ -229,8 +236,8 @@
 
     .content-card ol {
       padding-left: 20px;
-      margin: 8px 0 0;
-      font-size: 14px;
+      margin: 6px 0 0;
+      font-size: 15px;
       color: var(--text-muted);
     }
 
@@ -251,12 +258,12 @@
     /* Metrics */
 
     .metrics-header {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .metrics-header p {
       margin: 6px 0 0;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-muted);
     }
 
@@ -268,8 +275,8 @@
     }
 
     .metric-card {
-      border-radius: 18px;
-      padding: 10px 12px;
+      border-radius: 16px;
+      padding: 9px 11px;
       font-size: 11px;
       display: flex;
       flex-direction: column;
@@ -314,17 +321,17 @@
 
     .sidebar {
       position: sticky;
-      top: 96px;
+      top: 88px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
     }
 
     .sidebar-card {
       background: var(--bg-card);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow-soft);
-      padding: 20px 22px 22px;
+      padding: 18px 20px 20px;
       font-size: 13px;
     }
 
@@ -334,11 +341,11 @@
       letter-spacing: 0.16em;
       color: #6b7280;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .sidebar-dl {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       font-size: 13px;
       color: var(--text-muted);
     }
@@ -355,21 +362,22 @@
     .sidebar-bullets {
       list-style: disc;
       padding-left: 18px;
-      margin: 8px 0 14px;
+      margin: 6px 0 12px;
       color: var(--text-muted);
+      font-size: 13px;
     }
 
     .btn-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 10px;
+      margin-top: 8px;
     }
 
     .btn-primary,
     .btn-secondary {
       border-radius: var(--radius-pill);
-      padding: 8px 14px;
+      padding: 8px 13px;
       font-size: 12px;
       border: none;
       cursor: pointer;
@@ -401,7 +409,7 @@
     }
 
     .contact-note {
-      margin-top: 10px;
+      margin-top: 8px;
       font-size: 11px;
       color: #9ca3af;
     }
@@ -418,12 +426,27 @@
     }
 
     @media (max-width: 640px) {
+      body {
+        font-size: 16px;
+        line-height: 1.8;
+      }
+      .page {
+        padding: 20px 14px 40px;
+      }
       .top-bar-card {
         flex-direction: column;
         align-items: flex-start;
       }
+      .btn-linkedin-top {
+        align-self: flex-start;
+      }
+      .hero-card,
+      .content-card,
+      .metrics-card {
+        padding: 18px 16px 20px;
+      }
       .hero-title {
-        font-size: 23px;
+        font-size: 22px;
       }
       .metrics-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -475,16 +498,22 @@
             expertise with AI-driven tools, copilots, and transparent,
             pro-consumer education.
           </p>
+          <p class="hero-subtitle">
+            In a market where everything is more expensive, I care about
+            affordability. When consumers can actually see the full lending
+            landscape — including the wholesale channel, not just retail
+            brands — they make better choices and keep more of their money.
+            I want AI to make that kind of clarity normal.
+          </p>
 
           <div class="pill-row">
             <span class="pill">AI-assisted deal structuring</span>
             <span class="pill">Pro-buyer, pro-consumer advocacy</span>
             <span class="pill">Workflow &amp; systems design</span>
-            <span class="pill">Wholesale vs. retail transparency</span>
           </div>
         </section>
 
-        <!-- Why I'm excited -->
+        <!-- Why I’m excited -->
         <section class="content-card">
           <h3 class="section-title">
             Why I’m excited about AI copilots in mortgage &amp; real estate
@@ -552,8 +581,13 @@
               <strong>Consumer-first decision tools.</strong>
               <ul>
                 <li>
-                  Transparent wholesale vs. retail comparisons that expose
-                  lifetime cost, not just monthly payment.
+                  Transparent, side-by-side comparisons that show lifetime cost,
+                  not just monthly payment.
+                </li>
+                <li>
+                  Tools that clearly surface how accessing the broader
+                  marketplace — including wholesale options — can improve
+                  affordability for buyers in high-cost areas.
                 </li>
                 <li>
                   Offer-structuring sandboxes: “If I raise price and ask for
@@ -588,9 +622,9 @@
                   workflows and prompts any LO can use.
                 </li>
                 <li>
-                  Build shared libraries of scenarios, explanations, and
-                  stories that make pros better together instead of competing
-                  in the dark.
+                  Build shared libraries of scenarios, explanations, and stories
+                  that make pros better together instead of competing in the
+                  dark.
                 </li>
                 <li>
                   Make it normal for loan officers to act like creators and
@@ -645,16 +679,14 @@
 
             <div class="metric-card metric-reviews">
               <div class="metric-label">Reputation</div>
-              <div class="metric-value">
-                Hundreds of 5★ reviews
-              </div>
+              <div class="metric-value">Hundreds of 5★ reviews</div>
               <div class="metric-note">
                 Known for clarity, creativity, &amp; speed on complex deals.
               </div>
             </div>
           </div>
 
-          <p class="section-lead" style="margin-top:16px;">
+          <p class="section-lead" style="margin-top:14px;">
             My aim as a partner to AI companies is to translate the patterns
             I’ve proven in my own practice into products and workflows that
             scale — so thousands of loan officers, realtors, and buyers benefit
@@ -695,7 +727,7 @@
             </li>
           </ul>
 
-          <p class="section-lead" style="margin-top:12px;">
+          <p class="section-lead" style="margin-top:10px;">
             I believe in a mortgage industry that collaborates instead of hides
             the playbook. My work is about proving what’s possible in my own
             practice, then open-sourcing the patterns so other pros — and their
@@ -728,12 +760,11 @@
               Thousands of loans originated across purchases &amp; refinances.
             </li>
             <li>
-              $1B+ total funded volume in highly competitive West Coast
-              markets.
+              $1B+ total funded volume in highly competitive West Coast markets.
             </li>
             <li>
-              Educate buyers &amp; partners with tools, calculators, and
-              content that make decisions obvious.
+              Educate buyers &amp; partners with tools, calculators, and content
+              that make decisions obvious.
             </li>
           </ul>
           <div class="btn-row">
@@ -770,14 +801,14 @@
             <a href="tel:+14254786412">(425) 478-6412</a>
           </div>
 
-          <div style="margin-top:10px; font-size:13px;">
-            <span class="contact-label"
-              >Schedule a 20-minute conversation</span
-            >
+          <div style="margin-top:8px; font-size:13px;">
+            <span class="contact-label">
+              Schedule a 20-minute conversation
+            </span>
             <br />
             <a
               class="btn-primary"
-              style="margin-top:8px;"
+              style="margin-top:7px;"
               href="https://get.konnectd.io/widget/booking/EvprpR7Nw74HgZxOOoiI"
               target="_blank"
               rel="noopener noreferrer"
@@ -786,7 +817,7 @@
             </a>
           </div>
 
-          <div style="margin-top:14px; font-size:13px;">
+          <div style="margin-top:12px; font-size:13px;">
             <span class="contact-label">Mobile Quick Connect:</span>
             <br />
             <a
