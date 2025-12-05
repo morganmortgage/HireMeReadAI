@@ -106,7 +106,7 @@
     .top-bar-subtitle {
       font-size: 13px;
       color: #6b7280;
-      white-space: normal; /* allow wrapping on mobile */
+      white-space: normal; /* wrap on mobile */
     }
 
     .btn-linkedin-top {
@@ -414,6 +414,82 @@
       color: #9ca3af;
     }
 
+    /* Footer */
+
+    .footer-card {
+      margin-top: 26px;
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 22px 22px;
+      font-size: 14px;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .footer-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .footer-text {
+      margin: 0 0 10px;
+      color: var(--text-muted);
+    }
+
+    .footer-main-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .footer-main-link::after {
+      content: "→";
+      font-size: 14px;
+    }
+
+    .footer-subtitle {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #6b7280;
+      margin: 0 0 6px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+    }
+
+    .footer-link {
+      font-size: 13px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer-link small {
+      color: #6b7280;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+    }
+
+    .footer-bottom-note {
+      margin-top: 12px;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
     /* Responsive */
 
     @media (max-width: 960px) {
@@ -422,6 +498,9 @@
       }
       .sidebar {
         position: static;
+      }
+      .footer-main {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
 
@@ -442,7 +521,8 @@
       }
       .hero-card,
       .content-card,
-      .metrics-card {
+      .metrics-card,
+      .footer-card {
         padding: 18px 16px 20px;
       }
       .hero-title {
@@ -493,10 +573,9 @@
           </h1>
           <p class="hero-subtitle">
             24+ years in mortgage &amp; real estate finance, thousands of loans
-            closed, and over $1B funded. I’m rebuilding how buyers,
-            homeowners, and pros make decisions by combining deep domain
-            expertise with AI-driven tools, copilots, and transparent,
-            pro-consumer education.
+            closed, and over $1B funded. I’m rebuilding how buyers, homeowners,
+            and pros make decisions by combining deep domain expertise with
+            AI-driven tools, copilots, and transparent, pro-consumer education.
           </p>
           <p class="hero-subtitle">
             In a market where everything is more expensive, I care about
@@ -836,6 +915,119 @@
         </section>
       </aside>
     </div>
+
+    <!-- FOOTER: WEBSITE + SOCIALS -->
+    <footer class="footer-card">
+      <div class="footer-main">
+        <div>
+          <h3 class="footer-title">More from Mortgage Insider LLC</h3>
+          <p class="footer-text">
+            For tools, calculators, and deeper dives into smart home financing,
+            visit my main site. It’s where I share long-form education,
+            examples, and the systems I’m building for buyers, homeowners, and
+            industry pros.
+          </p>
+          <a
+            class="footer-main-link"
+            href="https://www.MortgageInsiderLLC.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MortgageInsiderLLC.com
+          </a>
+        </div>
+
+        <div>
+          <h4 class="footer-subtitle">Connect with me</h4>
+          <div class="footer-links">
+            <a
+              class="footer-link"
+              href="https://x.com/Originatortoo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>X</small>
+              @Originatortoo
+            </a>
+
+            <a
+              class="footer-link"
+              href="https://www.linkedin.com/in/lancemorganseattle"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>LinkedIn</small>
+              /in/lancemorganseattle
+            </a>
+
+            <a
+              class="footer-link"
+              href="https://www.instagram.com/originatortoo/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>Instagram</small>
+              @originatortoo
+            </a>
+
+            <a
+              class="footer-link"
+              href="https://twitter.com/originatortoo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>Twitter</small>
+              @originatortoo
+            </a>
+
+            <a
+              class="footer-link"
+              href="https://www.yelp.com/biz/lance-morgan-c2-financial-corporation-edmonds"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>Yelp</small>
+              Lance Morgan – C2 Financial
+            </a>
+
+            <a
+              class="footer-link"
+              href="https://www.zillow.com/lender-profile/theseattlemortgagelender"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>Zillow</small>
+              The Seattle Mortgage Lender
+            </a>
+
+            <a
+              class="footer-link"
+              href="https://www.youtube.com/@MortgageInsiderLLC"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>YouTube</small>
+              @MortgageInsiderLLC
+            </a>
+
+            <a
+              class="footer-link"
+              href="https://share.google/Jle09SIctSP0efMLH"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <small>Google</small>
+              Google profile / reviews
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-note">
+        Built to showcase how AI, data, and collaboration can reshape mortgage
+        &amp; real estate — for both the industry and the people it serves.
+      </div>
+    </footer>
   </div>
 </body>
 </html>
