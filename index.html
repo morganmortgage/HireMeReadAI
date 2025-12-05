@@ -6,33 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Lance Morgan – 24-year mortgage & real estate finance veteran using AI to fix how people shop, structure, and decide on home financing. Built for the Read AI team."
+    content="Lance Morgan – 24-year mortgage & real estate finance veteran using AI to fix how people shop, compare, and decide on home financing. Built for the Read AI team."
   />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #f3f4f6;          /* light background */
-      color: #0f172a;               /* dark text */
+      background: #f9fafb;                 /* light background */
+      color: #0f172a;
       line-height: 1.6;
     }
 
-    a { color: #2563eb; text-decoration: none; }
+    a { color: #4f46e5; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .page {
-      max-width: 960px;
+      max-width: 1040px;
       margin: 0 auto;
       padding: 32px 16px 64px;
     }
 
+    /* HERO */
+
     header {
-      padding: 24px 0 32px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.5);
       margin-bottom: 32px;
+      padding: 24px 24px 28px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.35), transparent 55%),
+        radial-gradient(circle at top right, rgba(244, 114, 182, 0.35), transparent 55%),
+        linear-gradient(135deg, #ffffff, #eef2ff);
+      border: 1px solid rgba(129, 140, 248, 0.5);
+      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
     }
 
     .badge {
@@ -41,13 +49,361 @@
       gap: 8px;
       padding: 4px 12px;
       border-radius: 999px;
-      background: #e0f2fe;
-      color: #0369a1;
-      font-size: 12px;
+      background: rgba(15, 23, 42, 0.08);
+      color: #0f172a;
+      font-size: 11px;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.12em;
       font-weight: 600;
     }
     .badge-dot {
-      width: 6px;
-      height: 6px;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    header h1 {
+      font-size: 34px;
+      margin: 14px 0 6px;
+      color: #020617;
+    }
+    header .subtitle {
+      margin: 0 0 12px;
+      max-width: 720px;
+      color: #111827;
+      font-size: 15px;
+    }
+    header .subtitle strong {
+      font-weight: 700;
+      color: #4f46e5;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 12px;
+    }
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: rgba(255, 255, 255, 0.9);
+      color: #1f2937;
+      font-weight: 500;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        padding: 20px 16px 22px;
+      }
+      header h1 {
+        font-size: 26px;
+      }
+    }
+
+    /* LAYOUT */
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.15fr) minmax(0, 1.6fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    section {
+      margin-bottom: 24px;
+      padding: 20px 20px 18px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+    }
+
+    section h2 {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: #111827;
+    }
+    section p {
+      margin: 0 0 8px;
+      color: #4b5563;
+      font-size: 14px;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      color: #4b5563;
+      font-size: 14px;
+    }
+    li + li {
+      margin-top: 6px;
+    }
+
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .metric {
+      flex: 1 1 145px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: #f9fafb;
+      border: 1px solid rgba(209, 213, 219, 0.95);
+      font-size: 13px;
+    }
+    .metric span { display: block; }
+    .metric-label {
+      color: #6b7280;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .metric-value {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+      margin-top: 2px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.95);
+      font-size: 13px;
+      cursor: pointer;
+      background: #ffffff;
+      color: #111827;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      border-color: transparent;
+      color: #f9fafb;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(209, 213, 219, 0.9);
+      font-size: 12px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Fixing how people actually choose a mortgage
+      </div>
+      <h1>Lance Morgan + Read AI</h1>
+      <p class="subtitle">
+        I’m a 24-year mortgage and real estate finance veteran who has used AI to save clients
+        more than <strong>$110,000 this year alone</strong> by changing how they shop, compare, and
+        structure home financing. The industry is a trillion-dollar maze of disconnected software.
+        I want to help Read AI become the decision engine that finally connects it – for buyers,
+        loan officers, and realtors.
+      </p>
+      <div class="pill-row">
+        <div class="pill">Disrupting Mortgage & Real Estate</div>
+        <div class="pill">AI-First Decision Workflows</div>
+        <div class="pill">$110k+ Client Savings in 2025</div>
+        <div class="pill">Seattle-Based Branch Owner</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <!-- WHY READ AI -->
+        <section>
+          <h2>Why I’m excited about Read AI</h2>
+          <p>
+            Today’s mortgage journey is backwards. Buyers fall in love with a home, then scramble for a
+            pre-approval, juggle quotes from a few lenders, and try to compare PDFs and fee worksheets at
+            midnight. Behind the scenes, loan officers, realtors, and processors are bouncing between systems
+            that don’t communicate: LOS, pricing engines, POS, CRM, portals, email, chat, spreadsheets.
+          </p>
+          <p>
+            I live inside that mess every day. Smart buyers overpay or miss opportunities not because they’re
+            unqualified, but because the decision layer is broken. Nobody has a single, trusted brain that sits
+            across the conversation and the software stack and says: <em>“Here’s what’s really happening, here are
+            the best structures for this borrower, and here’s what you should do next.”</em>
+          </p>
+          <p>
+            Read AI is the closest thing I’ve seen to that missing brain. You already sit across meetings, email,
+            and messages; you already summarize the noise and surface what matters. Plug that same copilot into
+            the mortgage & real estate stack, and you don’t just save time – you change how home-financing
+            decisions get made.
+          </p>
+        </section>
+
+        <!-- WHAT I WANT TO BUILD -->
+        <section>
+          <h2>What I want to build at Read AI</h2>
+          <ul>
+            <li>
+              <strong>A connected decision layer for home financing.</strong>
+              Use Read’s position across meetings, email, and messages to build a single source of truth
+              for each file: goals, constraints, pricing options, conditions, and trade-offs – one copilot
+              view instead of scattered notes and systems.
+            </li>
+            <li>
+              <strong>Consumer-grade clarity on “which option is actually better?”.</strong>
+              Turn the mess of loan estimates, fee worksheets, and lender jargon into side-by-side narratives
+              a human can understand: what you pay, what you save, the risk, and why one structure is smarter
+              for this borrower.
+            </li>
+            <li>
+              <strong>Real-time radar for lenders and realtors.</strong>
+              Give teams a live view of which files are stuck, who hasn’t been followed up with, which buyers
+              are at risk of drifting to another lender, and where concessions or structure changes can save a deal.
+            </li>
+            <li>
+              <strong>Vertical playbooks that match reality, not theory.</strong>
+              Map how top producers actually work – including the hacks – and design copilot flows that remove
+              manual note-taking, status updates, and repetitive explanations from their week.
+            </li>
+            <li>
+              <strong>A data flywheel that gets smarter with every file.</strong>
+              Use patterns across thousands of loans and conversations to recommend better structures, spot
+              hidden savings, and flag risk earlier – while keeping humans in control of the decision.
+            </li>
+          </ul>
+        </section>
+
+        <!-- PROOF -->
+        <section>
+          <h2>Proof I can deliver</h2>
+          <p>
+            I’m not a software engineer – I’m the operator in the trenches who rebuilt his own process with AI
+            and proved it with real money on the line. In 2025 alone, my AI-driven process has saved clients
+            over <strong>$110,000</strong> in interest and costs by structuring deals differently – not just
+            “shopping a rate,” but rethinking points, credits, mortgage insurance, terms, and timing.
+          </p>
+          <div class="metric-row">
+            <div class="metric">
+              <span class="metric-label">Client Savings (2025 YTD)</span>
+              <span class="metric-value">$110,000+</span>
+              <span>Captured through smarter structures and AI-assisted analysis.</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Years in Industry</span>
+              <span class="metric-value">24+ Years</span>
+              <span>Mortgage & real estate finance in highly competitive markets.</span>
+            </div>
+            <div class="metric">
+              <span class="metric-label">Reputation</span>
+              <span class="metric-value">Dozens of 5★ reviews</span>
+              <span>Known for creativity, clarity, and speed on complex, high-stakes deals.</span>
+            </div>
+          </div>
+          <p style="margin-top: 10px;">
+            My goal at Read AI is to take the patterns I’ve proven in my own practice and translate them into
+            vertical workflows and products that scale – so thousands of loan officers, realtors, and buyers
+            benefit from the same level of decision quality.
+          </p>
+        </section>
+
+        <!-- 90 DAYS -->
+        <section>
+          <h2>How I’d start in the first 90 days</h2>
+          <ul>
+            <li>
+              <strong>Become an extreme power user.</strong>
+              Live in Read across my own meetings, email, and messages; understand every feature and
+              limitation through the lens of a loan officer, realtor, and team lead.
+            </li>
+            <li>
+              <strong>Map the real mortgage & real-estate stack.</strong>
+              Document how top producers actually work – which tools they touch, where information dies,
+              how they hack around gaps – and identify the 3–4 highest-leverage insertion points for Read’s copilot.
+            </li>
+            <li>
+              <strong>Run focused pilots with real teams.</strong>
+              Partner with a handful of broker shops and agent teams to test specific workflows
+              (pre-approval consults, weekly pipeline reviews, contract-to-close). Measure time saved,
+              error reduction, pull-through, and client satisfaction.
+            </li>
+            <li>
+              <strong>Ship a “Read for Mortgage & Real Estate” playbook.</strong>
+              Package the winning workflows into a clear vertical story: demo scripts, ROI examples,
+              configuration guides, and feedback loops for product and data science.
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <aside>
+        <!-- SNAPSHOT RESUME -->
+        <section>
+          <h2>Snapshot Resume</h2>
+          <p><strong>Name:</strong> Lance Morgan</p>
+          <p>
+            <strong>Role:</strong> Senior Mortgage Broker & Branch Manager, building AI-assisted workflows that
+            make home-financing decisions faster, cheaper, and clearer for consumers while making experts’ time
+            more valuable.
+          </p>
+          <p><strong>Focus:</strong> AI-assisted deal structuring, client education, and workflow design in mortgage & real estate.</p>
+          <ul>
+            <li>Originated and structured hundreds of home loans across purchases and refinances.</li>
+            <li>Built AI-assisted processes that identify better loan options and cost savings.</li>
+            <li>Educated buyers and partners through content, tools, and scenario analysis.</li>
+          </ul>
+
+          <div class="btn-row">
+            <!-- TODO: replace # with your actual resume link -->
+            <a class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">
+              View Full Resume (PDF)
+            </a>
+            <!-- TODO: replace # with your LinkedIn URL -->
+            <a class="btn" href="#" target="_blank" rel="noopener noreferrer">
+              View LinkedIn Profile
+            </a>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section>
+          <h2>Contact</h2>
+          <p><strong>Email:</strong> <a href="mailto:lmorgan@c2financial.com">lmorgan@c2financial.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+14254786412">+1 (425) 478-6412</a></p>
+          <div class="btn-row">
+            <!-- TODO: replace # with your calendar link if you want -->
+            <a class="btn" href="#" target="_blank" rel="noopener noreferrer">
+              Schedule a 20-min conversation
+            </a>
+          </div>
+          <p style="margin-top: 10px; font-size: 12px; color: #6b7280;">
+            This page and its content were generated with the help of AI tools – a small demonstration of how I work.
+          </p>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      Built specifically for the Read AI team – happy to walk through the workflows and ideas behind it live.
+    </footer>
+  </div>
+</body>
+</html>
