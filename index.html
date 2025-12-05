@@ -2,577 +2,685 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Lance Morgan – Mortgage & Real Estate + AI</title>
+  <title>Lance Morgan – Mortgage & Real Estate Industry Disruptor + Entrepreneur</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-card: #101629;
-      --bg-card-soft: #141b2e;
-      --accent: #5b5bff;
-      --accent-soft: #2b67ff22;
-      --text-main: #f5f7ff;
-      --text-muted: #a5afc7;
-      --border-subtle: #262f45;
-      --pill-bg: #182135;
-      --pill-border: #293552;
-      --stat1: linear-gradient(145deg, #243bff22, #00d4ff22);
-      --stat2: linear-gradient(145deg, #ff7a3c22, #ffd23c22);
-      --stat3: linear-gradient(145deg, #23c55222, #39a0ff22);
-      --radius-lg: 20px;
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-subtle: #e5e7eb;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.08);
+      --pill-bg: #eef2ff;
+      --pill-text: #3730a3;
+      --metric-1: #ecfdf3;
+      --metric-1-border: #bbf7d0;
+      --metric-2: #eff6ff;
+      --metric-2-border: #bfdbfe;
+      --metric-3: #fff7ed;
+      --metric-3-border: #fed7aa;
+      --metric-4: #f5f3ff;
+      --metric-4-border: #ddd6fe;
+      --radius-lg: 18px;
       --radius-pill: 999px;
+      --shadow-card: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.06);
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
     body {
+      margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #1a2140, #050814 55%);
+      background: radial-gradient(circle at top, #e0e7ff 0, #f5f5f7 45%, #f9fafb 100%);
       color: var(--text-main);
-      line-height: 1.6;
-      padding: 40px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .page {
       max-width: 1120px;
       margin: 0 auto;
+      padding: 28px 20px 48px;
     }
 
-    .pill-row {
-      display: inline-flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 12px;
+    /* Top bar */
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+      margin-bottom: 24px;
     }
 
-    .pill {
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--pill-border);
-      background: var(--pill-bg);
+    .top-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
       color: var(--text-muted);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 4px 10px;
+    }
+
+    .top-logo {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: conic-gradient(
+        from 160deg,
+        #4f46e5,
+        #22c55e,
+        #0ea5e9,
+        #f97316,
+        #4f46e5
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+    }
+
+    .top-logo span {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .top-title-main {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .top-title-sub {
+      color: #6b7280;
+    }
+
+    .top-actions a {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-    }
-
-    .pill-dot {
-      width: 6px;
-      height: 6px;
+      padding: 6px 14px;
       border-radius: 999px;
-      background: #4cf0ff;
-      box-shadow: 0 0 6px #4cf0ff;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #111827;
+      background: linear-gradient(to bottom, #ffffff, #f9fafb);
     }
 
-    h1 {
-      font-size: 30px;
-      font-weight: 650;
-      letter-spacing: 0.02em;
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      color: var(--text-muted);
+    .top-actions a span {
       font-size: 14px;
-      max-width: 640px;
     }
 
-    .tag-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .chip {
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--border-subtle);
-      background: #11182b;
-      padding: 6px 12px;
-      font-size: 11px;
-      color: var(--text-muted);
-    }
+    /* Layout */
 
     .layout {
       display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
-      gap: 24px;
-      margin-top: 28px;
+      grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1.2fr);
+      gap: 22px;
+      align-items: flex-start;
     }
 
     @media (max-width: 900px) {
       .layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
     }
+
+    /* Pills + headings */
+
+    .label-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+    }
+
+    .label-pill {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.03);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+    }
+
+    h1 {
+      font-size: clamp(26px, 3vw, 32px);
+      margin: 0 0 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 640px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .hero-tag {
+      padding: 6px 11px;
+      border-radius: var(--radius-pill);
+      background: var(--pill-bg);
+      color: var(--pill-text);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Cards */
 
     .card {
-      background: var(--bg-card);
+      background: rgba(255, 255, 255, 0.98);
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
-      padding: 20px 22px;
-      box-shadow: 0 16px 40px #00000066;
+      box-shadow: var(--shadow-card);
+      padding: 18px 20px 18px;
     }
 
-    .card + .card {
-      margin-top: 16px;
+    .card h2 {
+      font-size: 17px;
+      margin: 0 0 10px;
     }
 
-    .card-title {
-      font-size: 15px;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .card-subtitle {
-      font-size: 13px;
+    .card p {
+      font-size: 14px;
+      line-height: 1.6;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      margin: 0 0 10px;
     }
 
-    .body-text {
-      font-size: 13px;
+    .card ul {
+      margin: 6px 0 4px 18px;
+      padding: 0;
       color: var(--text-muted);
+      font-size: 14px;
     }
 
-    .body-text strong {
-      color: var(--text-main);
-      font-weight: 550;
-    }
-
-    ul {
-      margin-top: 4px;
-      padding-left: 18px;
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    ul li + li {
-      margin-top: 4px;
-    }
-
-    /* Stats row */
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 14px;
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 900px) {
-      .stats-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    .stat-card {
-      border-radius: 14px;
-      padding: 10px 12px;
-      border: 1px solid #2e3755;
-      background: var(--bg-card-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.9;
-      mix-blend-mode: screen;
-      pointer-events: none;
-    }
-
-    .stat-card.stat-1::before {
-      background: var(--stat1);
-    }
-
-    .stat-card.stat-2::before {
-      background: var(--stat2);
-    }
-
-    .stat-card.stat-3::before {
-      background: var(--stat3);
-    }
-
-    .stat-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #9ba6c5;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stat-value {
-      margin-top: 4px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #ffffff;
-      position: relative;
-      z-index: 1;
-    }
-
-    .stat-caption {
-      margin-top: 2px;
-      font-size: 11px;
-      color: #ced5f0;
-      position: relative;
-      z-index: 1;
+    .card li {
+      margin-bottom: 4px;
     }
 
     /* Right column cards */
 
-    .snapshot-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 8px;
+    .side-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: sticky;
+      top: 20px;
     }
 
-    .snapshot-table td {
-      padding: 3px 0;
-      vertical-align: top;
+    .snapshot-card h2 {
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #111827;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 6px 14px;
+      font-size: 13px;
+      margin-bottom: 10px;
     }
 
     .snapshot-label {
-      width: 32%;
-      color: #a5afc7;
+      color: #9ca3af;
+      white-space: nowrap;
     }
 
     .snapshot-value {
-      color: #f5f7ff;
+      color: #111827;
+      font-weight: 500;
     }
 
-    .bullet-list {
-      margin-top: 8px;
-      padding-left: 18px;
-      font-size: 12px;
+    .snapshot-focus {
+      grid-column: 1 / -1;
+      margin-top: 6px;
+      font-size: 13px;
       color: var(--text-muted);
     }
 
-    .bullet-list li + li {
-      margin-top: 4px;
+    .snapshot-bullets {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--text-muted);
     }
 
-    .button-row {
+    .snapshot-bullets li {
+      margin-bottom: 4px;
+    }
+
+    .snapshot-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
+      gap: 8px;
+      margin-top: 10px;
     }
 
-    .btn {
+    .btn-primary,
+    .btn-ghost {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       padding: 8px 14px;
       border-radius: var(--radius-pill);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
-      text-decoration: none;
-      border: 1px solid transparent;
+      border: none;
       cursor: pointer;
-      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease,
-        border-color 0.12s ease;
+      text-decoration: none;
       white-space: nowrap;
     }
 
     .btn-primary {
-      background: radial-gradient(circle at top left, #7c5cff, #5146ff);
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
       color: #ffffff;
-      box-shadow: 0 10px 30px #00000080;
+      box-shadow: var(--shadow-soft);
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px #000000aa;
+      text-decoration: none;
+      filter: brightness(1.02);
     }
 
-    .btn-secondary {
-      background: transparent;
-      border-color: #303a55;
-      color: var(--text-main);
+    .btn-ghost {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      color: #111827;
     }
 
-    .btn-secondary:hover {
-      background: #18213a;
-      transform: translateY(-1px);
+    .btn-ghost:hover {
+      text-decoration: none;
+      background: #f9fafb;
+    }
+
+    .contact-card h2 {
+      font-size: 15px;
+      margin-bottom: 10px;
     }
 
     .contact-row {
-      margin-top: 10px;
-      font-size: 12px;
+      font-size: 13px;
+      margin-bottom: 4px;
       color: var(--text-muted);
     }
 
-    .contact-row strong {
-      color: var(--text-main);
+    .contact-row span {
       font-weight: 500;
+      color: #111827;
     }
 
-    .link-inline {
-      color: #8ea8ff;
-      text-decoration: none;
+    .contact-cta {
+      margin-top: 10px;
     }
 
-    .link-inline:hover {
-      text-decoration: underline;
-    }
-
-    .footnote {
-      margin-top: 14px;
-      font-size: 11px;
+    .contact-cta p {
+      margin-bottom: 6px;
+      font-size: 13px;
       color: var(--text-muted);
+    }
+
+    .contact-footer {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    /* Metrics row */
+
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .metric-card {
+      border-radius: 16px;
+      padding: 10px 12px;
+      border-width: 1px;
+      border-style: solid;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .metric-label {
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      font-weight: 600;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .metric-value {
+      font-size: 17px;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .metric-caption {
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    .metric-1 {
+      background: var(--metric-1);
+      border-color: var(--metric-1-border);
+    }
+
+    .metric-2 {
+      background: var(--metric-2);
+      border-color: var(--metric-2-border);
+    }
+
+    .metric-3 {
+      background: var(--metric-3);
+      border-color: var(--metric-3-border);
+    }
+
+    .metric-4 {
+      background: var(--metric-4);
+      border-color: var(--metric-4-border);
+    }
+
+    /* Section stack under hero */
+
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 6px;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: #9ca3af;
+      margin: 0 0 4px;
+    }
+
+    .card h2 + h3 {
+      margin-top: -4px;
+    }
+
+    .card strong {
+      color: #111827;
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- Header -->
-    <div class="pill-row">
-      <span class="pill">
-        <span class="pill-dot"></span>
-        Mortgage • Real Estate • AI Copilots
-      </span>
-    </div>
-
-    <h1>Lance Morgan – Mortgage &amp; Real Estate Industry Disruptor + Entrepreneur</h1>
-    <p class="subtitle">
-      24+ years in mortgage &amp; real estate finance, thousands of loans closed, and
-      over $1B funded. I’m rebuilding how buyers, homeowners, and pros make decisions
-      by combining deep domain expertise with AI-driven tools, copilots, and transparent,
-      pro-consumer education.
-    </p>
-
-    <div class="tag-chips">
-      <span class="chip">AI-assisted deal structuring</span>
-      <span class="chip">Pro-buyer, pro-consumer advocacy</span>
-      <span class="chip">Workflow &amp; systems design</span>
-      <span class="chip">Wholesale vs. retail transparency</span>
-    </div>
-
-    <!-- Main layout -->
-    <div class="layout">
-      <!-- Left column -->
-      <div>
-        <div class="card">
-          <div class="card-title">
-            Why I’m excited about AI copilots in mortgage &amp; real estate
-          </div>
-          <p class="body-text">
-            Most buyers still choose their mortgage with limited data, rushed timelines,
-            and little ability to compare outcomes. Servicers and originators sit on
-            mountains of information, yet consumers navigate the largest financial
-            decision of their lives with tools that feel like they’re from 2005.
-          </p>
-          <p class="body-text" style="margin-top: 10px;">
-            I’ve spent my career inside this system — as a wholesale mortgage broker,
-            branch manager, and educator. I know where the data lives, where it dies,
-            and where borrowers get overcharged. Over the last 18 months, I’ve rebuilt
-            my own practice around AI copilots that:
-          </p>
-          <ul>
-            <li>Turn meetings, emails, and docs into structured tasks, timelines, and conditions.</li>
-            <li>Compare complex scenarios in seconds — rate, term, MI, credits, and timing.</li>
-            <li>Explain options in plain language buyers, realtors, and CPAs actually understand.</li>
-          </ul>
-          <p class="body-text" style="margin-top: 10px;">
-            My goal now is to partner with AI product teams that want to turn this
-            inside-the-trenches knowledge into vertical copilots and decision engines
-            for buyers, homeowners, and industry professionals.
-          </p>
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="top-brand">
+        <div class="top-logo">
+          <span>LM</span>
         </div>
-
-        <div class="card">
-          <div class="card-title">What I want to build with an AI team</div>
-          <div class="body-text">
-            <strong>1. Copilots for real mortgage &amp; real-estate workflows.</strong>
-          </div>
-          <ul>
-            <li>Buyer consult copilots that listen, summarize, flag risks, and auto-create conditions, tasks, and timelines.</li>
-            <li>Refinance &amp; restructure copilots that watch rates, equity, and goals, then notify when “it finally makes sense.”</li>
-            <li>Agent &amp; LO tools that stitch together meetings, email, CRM, LOS, and pricing engines into one coherent story.</li>
-          </ul>
-
-          <div class="body-text" style="margin-top: 10px;">
-            <strong>2. Consumer-first decision tools.</strong>
-          </div>
-          <ul>
-            <li>Transparent wholesale vs. retail comparisons that expose lifetime cost, not just monthly payment.</li>
-            <li>Offer-structuring sandboxes: “If I raise price and ask for credits, what happens to cash-to-close and long-term cost?”</li>
-            <li>Smart alerts that blend property data, rate movement, and personal goals — not just “rates dropped, time to refi.”</li>
-          </ul>
-
-          <div class="body-text" style="margin-top: 10px;">
-            <strong>3. Systems that pros actually adopt.</strong>
-          </div>
-          <ul>
-            <li>Tools that remove busywork instead of just creating new dashboards.</li>
-            <li>Workflows that fit how LOs, realtors, and ops teams already work — then quietly make everything faster and safer.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="card-title">Proof I can deliver</div>
-          <p class="body-text">
-            I’m not a software engineer — I’m the operator in the trenches who rebuilt
-            his own process with AI and proved it with real money on the line. Over my
-            career I’ve closed thousands of home loans with more than <strong>$1B in total funded
-            volume</strong>. In 2025 alone, my AI-driven process has saved clients over
-            <strong>$110,000 in interest and costs</strong> by structuring deals differently — not just
-            “shopping a rate,” but rethinking points, credits, mortgage insurance,
-            terms, and timing.
-          </p>
-
-          <div class="stats-row">
-            <div class="stat-card stat-1">
-              <div class="stat-label">Client savings (2025 YTD)</div>
-              <div class="stat-value">$110,000+</div>
-              <div class="stat-caption">Captured via AI-assisted deal design and timing.</div>
-            </div>
-            <div class="stat-card stat-2">
-              <div class="stat-label">Career loan volume</div>
-              <div class="stat-value">$1B+ funded</div>
-              <div class="stat-caption">Thousands of loans across purchases &amp; refinances.</div>
-            </div>
-            <div class="stat-card stat-3">
-              <div class="stat-label">Years in industry</div>
-              <div class="stat-value">24+ years</div>
-              <div class="stat-caption">Mortgage &amp; real estate finance in competitive markets.</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">Reputation</div>
-              <div class="stat-value">Dozens of 5★ reviews</div>
-              <div class="stat-caption">Known for clarity, creativity &amp; speed on complex deals.</div>
-            </div>
-          </div>
-
-          <p class="body-text" style="margin-top: 8px;">
-            My aim as a partner to AI companies is to translate the patterns I’ve proven
-            in my own practice into products and workflows that scale — so thousands of
-            loan officers, realtors, and buyers benefit from the same level of decision
-            quality, transparency, and savings.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-title">If you’re building AI for work, here’s how I add value</div>
-          <ul>
-            <li><strong>Domain depth:</strong> 24+ years across C2 Financial / Mortgage Insider LLC, Fairway, and Penrith Home Loans.</li>
-            <li><strong>Technical mindset:</strong> Comfortable living inside copilots, pricing engines, LOS systems, and spreadsheets.</li>
-            <li><strong>Sales &amp; storytelling:</strong> Skilled at discovery, demos, objection-handling, and explaining complex trade-offs simply.</li>
-            <li><strong>Pro-buyer, pro-consumer advocacy:</strong> I design systems that buyers want to use — revenue follows from the pros who plug in, not from trapping consumers in funnels.</li>
-          </ul>
+        <div>
+          <div class="top-title-main">Lance Morgan</div>
+          <div class="top-title-sub">Mortgage & Real Estate • AI Copilots • Product Partner</div>
         </div>
       </div>
+      <div class="top-actions">
+        <a href="https://www.linkedin.com/in/seattlewholesalemortgage" target="_blank" rel="noopener">
+          <span>in</span> View LinkedIn
+        </a>
+      </div>
+    </div>
 
-      <!-- Right column -->
-      <div>
-        <div class="card">
-          <div class="card-title">Snapshot resume</div>
-          <table class="snapshot-table">
-            <tr>
-              <td class="snapshot-label">Name</td>
-              <td class="snapshot-value">Lance Morgan</td>
-            </tr>
-            <tr>
-              <td class="snapshot-label">Location</td>
-              <td class="snapshot-value">Seattle, WA</td>
-            </tr>
-            <tr>
-              <td class="snapshot-label">Current role</td>
-              <td class="snapshot-value">
-                Senior Mortgage Broker &amp; Branch Manager (NMLS #742281)<br />
-                C2 Financial / Mortgage Insider LLC
-              </td>
-            </tr>
-            <tr>
-              <td class="snapshot-label">Focus</td>
-              <td class="snapshot-value">
-                AI-assisted deal structuring, buyer education, workflow design in mortgage &amp; real estate.<br />
-                <strong>Pro buyer, pro-consumer advocacy &amp; transparency.</strong>
-              </td>
-            </tr>
-          </table>
+    <div class="layout">
+      <!-- LEFT COLUMN -->
+      <main>
+        <div class="label-row">
+          <div class="label-pill">Mortgage</div>
+          <div class="label-pill">Real Estate</div>
+          <div class="label-pill">AI Copilots</div>
+        </div>
 
-          <ul class="bullet-list">
+        <h1>Lance Morgan – Mortgage &amp; Real Estate Industry Disruptor + Entrepreneur</h1>
+
+        <p class="hero-subtitle">
+          24+ years in mortgage &amp; real estate finance, thousands of loans closed, and over $1B funded.
+          I’m rebuilding how buyers, homeowners, and pros make decisions by combining deep domain expertise
+          with AI-driven tools, copilots, and transparent, pro-consumer education.
+        </p>
+
+        <div class="hero-tags">
+          <span class="hero-tag">AI-assisted deal structuring</span>
+          <span class="hero-tag">Pro-buyer, pro-consumer advocacy</span>
+          <span class="hero-tag">Workflow &amp; systems design</span>
+          <span class="hero-tag">Wholesale vs. retail transparency</span>
+        </div>
+
+        <section class="stack">
+          <!-- Why I'm excited -->
+          <section class="card">
+            <h2>Why I’m excited about AI copilots in mortgage &amp; real estate</h2>
+            <p>
+              Most buyers still choose their mortgage with limited data, rushed timelines, and little ability
+              to compare outcomes. Servicers and originators sit on mountains of information, yet consumers
+              navigate the largest financial decision of their lives with tools that feel like they’re from 2005.
+            </p>
+            <p>
+              I’ve spent my career inside this system — as a wholesale mortgage broker, branch manager, and educator.
+              I know where the data lives, where it dies, and where borrowers get overcharged. Over the last 18 months,
+              I’ve rebuilt my own practice around AI copilots that:
+            </p>
+            <ul>
+              <li>Turn meetings, emails, and docs into structured tasks, timelines, and conditions.</li>
+              <li>Compare complex scenarios in seconds — rate, term, MI, credits, and timing.</li>
+              <li>Explain options in plain language buyers, realtors, and CPAs actually understand.</li>
+            </ul>
+            <p>
+              My goal now is to partner with AI product teams that want to turn this inside-the-trenches knowledge into
+              vertical copilots and decision engines for buyers, homeowners, and industry professionals.
+            </p>
+          </section>
+
+          <!-- What I want to build -->
+          <section class="card">
+            <h2>What I want to build with an AI team</h2>
+
+            <h3>1. Copilots for real mortgage &amp; real-estate workflows.</h3>
+            <ul>
+              <li>Buyer consult copilots that listen, summarize, flag risks, and auto-create conditions, tasks, and timelines.</li>
+              <li>Refinance &amp; restructure copilots that watch rates, equity, and goals, then notify when “it finally makes sense.”</li>
+              <li>Agent &amp; LO tools that stitch together meetings, email, CRM, LOS, and pricing engines into one coherent story.</li>
+            </ul>
+
+            <h3>2. Consumer-first decision tools.</h3>
+            <ul>
+              <li>Transparent wholesale vs. retail comparisons that expose lifetime cost, not just monthly payment.</li>
+              <li>Offer-structuring sandboxes: “If I raise price and ask for credits, what happens to cash-to-close and long-term cost?”</li>
+              <li>Smart alerts that blend property data, rate movement, and personal goals — not just “rates dropped, time to refi.”</li>
+            </ul>
+
+            <h3>3. Systems that pros actually adopt.</h3>
+            <ul>
+              <li>Tools that remove busywork instead of just creating new dashboards.</li>
+              <li>
+                Workflows that fit how LOs, realtors, and ops teams already work — then quietly make everything faster
+                and safer.
+              </li>
+            </ul>
+          </section>
+
+          <!-- Proof I can deliver -->
+          <section class="card">
+            <h2>Proof I can deliver</h2>
+            <p>
+              I’m not a software engineer — I’m the operator in the trenches who rebuilt his own process with AI and
+              proved it with real money on the line. Over my career I’ve closed thousands of home loans with more than
+              <strong>$1B in total funded volume.</strong> In 2025 alone, my AI-driven process has saved clients
+              <strong>over $110,000 in interest and costs</strong> by structuring deals differently — not just “shopping a rate,”
+              but rethinking points, credits, mortgage insurance, terms, and timing.
+            </p>
+
+            <div class="metrics-row">
+              <div class="metric-card metric-1">
+                <div class="metric-label">Client savings (2025 YTD)</div>
+                <div class="metric-value">$110,000+</div>
+                <div class="metric-caption">Captured via AI-assisted deal design and timing.</div>
+              </div>
+
+              <div class="metric-card metric-2">
+                <div class="metric-label">Career loan volume</div>
+                <div class="metric-value">$1B+ funded</div>
+                <div class="metric-caption">Thousands of loans across purchases &amp; refinances.</div>
+              </div>
+
+              <div class="metric-card metric-3">
+                <div class="metric-label">Years in industry</div>
+                <div class="metric-value">24+ years</div>
+                <div class="metric-caption">Mortgage &amp; real estate finance in competitive markets.</div>
+              </div>
+
+              <div class="metric-card metric-4">
+                <div class="metric-label">Reputation</div>
+                <div class="metric-value">Hundreds of 5★ reviews</div>
+                <div class="metric-caption">Known for clarity, creativity, &amp; speed on complex deals.</div>
+              </div>
+            </div>
+
+            <p style="margin-top:14px;">
+              My aim as a partner to AI companies is to translate the patterns I’ve proven in my own practice into products
+              and workflows that scale — so thousands of loan officers, realtors, and buyers benefit from the same level of
+              decision quality, transparency, and savings.
+            </p>
+          </section>
+
+          <!-- How I add value -->
+          <section class="card">
+            <h2>If you’re building AI for work, here’s how I add value</h2>
+            <ul>
+              <li><strong>Domain depth:</strong> 24+ years across C2 Financial / Mortgage Insider LLC, Fairway, and Penrith Home Loans.</li>
+              <li><strong>Technical mindset:</strong> Comfortable living inside copilots, pricing engines, LOS systems, and spreadsheets.</li>
+              <li><strong>Sales &amp; storytelling:</strong> Skilled at discovery, demos, objection-handling, and explaining complex trade-offs simply.</li>
+              <li><strong>Pro-buyer, pro-consumer advocacy:</strong> I design systems that buyers want to use — revenue follows from the pros who plug in, not from trapping consumers in funnels.</li>
+            </ul>
+          </section>
+        </section>
+      </main>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="side-column">
+        <!-- Snapshot resume -->
+        <section class="card snapshot-card">
+          <h2>Snapshot resume</h2>
+
+          <div class="snapshot-grid">
+            <div class="snapshot-label">Name</div>
+            <div class="snapshot-value">Lance Morgan</div>
+
+            <div class="snapshot-label">Location</div>
+            <div class="snapshot-value">Seattle, WA</div>
+
+            <div class="snapshot-label">Current role</div>
+            <div class="snapshot-value">
+              Senior Mortgage Broker &amp; Branch Manager<br />
+              C2 Financial / Mortgage Insider LLC<br />
+              (NMLS #742281)
+            </div>
+
+            <div class="snapshot-label">Focus</div>
+            <div class="snapshot-focus">
+              AI-assisted deal structuring, buyer education, and workflow design in mortgage &amp; real estate.<br />
+              <strong>Pro-buyer, pro-consumer advocacy &amp; transparency.</strong>
+            </div>
+          </div>
+
+          <ul class="snapshot-bullets">
             <li>Thousands of loans originated across purchases &amp; refinances.</li>
             <li>$1B+ total funded volume in highly competitive West Coast markets.</li>
             <li>Educate buyers &amp; partners with tools, calculators, and content that make decisions obvious.</li>
           </ul>
 
-          <div class="button-row">
+          <div class="snapshot-actions">
             <a
+              class="btn-primary"
               href="https://acrobat.adobe.com/id/urn:aaid:sc:US:6249d98d-e033-4391-b6d5-9bd04546ee33"
-              class="btn btn-primary"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               View full resume (PDF)
             </a>
             <a
+              class="btn-ghost"
               href="https://www.linkedin.com/in/seattlewholesalemortgage"
-              class="btn btn-secondary"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               View LinkedIn profile
             </a>
           </div>
-        </div>
+        </section>
 
-        <div class="card">
-          <div class="card-title">Contact &amp; quick connect</div>
+        <!-- Contact & quick connect -->
+        <section class="card contact-card">
+          <h2>Contact &amp; quick connect</h2>
 
           <div class="contact-row">
-            <strong>Email:</strong>
-            <a class="link-inline" href="mailto:lmorgan@c2financial.com">lmorgan@c2financial.com</a>
+            <span>Email:</span> lmorgan@c2financial.com
           </div>
           <div class="contact-row">
-            <strong>Phone:</strong>
-            <a class="link-inline" href="tel:+14254786412">(425) 478-6412</a>
+            <span>Phone:</span> (425) 478-6412
           </div>
 
-          <div class="contact-row" style="margin-top: 16px;">
-            <strong>Schedule a 20-minute conversation</strong>
-          </div>
-          <div class="button-row" style="margin-top: 8px;">
+          <div class="contact-cta">
+            <p>Schedule a 20-minute conversation</p>
             <a
+              class="btn-primary"
               href="https://get.konnectd.io/widget/booking/EvprpR7Nw74HgZxOOoiI"
-              class="btn btn-primary"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="noopener"
             >
               Book via my calendar link
             </a>
           </div>
 
-          <div class="contact-row" style="margin-top: 14px;">
-            <strong>Mobile Quick Connect:</strong>
-            <a class="link-inline" href="https://www.SeattleWholesaleMortgage.com" target="_blank" rel="noopener noreferrer">
-              www.SeattleWholesaleMortgage.com
-            </a>
+          <div class="contact-cta" style="margin-top:12px;">
+            <p><strong>Mobile Quick Connect:</strong> <a href="https://www.SeattleWholesaleMortgage.com" target="_blank" rel="noopener">www.SeattleWholesaleMortgage.com</a></p>
           </div>
 
-          <p class="footnote">
-            This page and some of the copy were drafted with AI tools — a small
-            example of how I already work with copilots every day to design better
-            workflows, decisions, and client experiences.
-          </p>
-        </div>
-      </div>
+          <div class="contact-footer">
+            This page and parts of the copy were drafted with AI tools — a small example of how I already work with copilots every day to design better workflows, decisions, and client experiences.
+          </div>
+        </section>
+      </aside>
     </div>
   </div>
 </body>
